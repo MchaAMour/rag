@@ -11,6 +11,7 @@ dependencies = [
     "billiard==4.2.1",
     "celery==5.5.3",
     "cohere==5.5.8",
+    "dotenv>=0.9.9",
     "fastapi==0.110.2",
     "fastapi-health==0.4.0",
     "flower==2.0.1",
