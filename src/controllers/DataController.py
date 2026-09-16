@@ -21,7 +21,7 @@ class DataController(BaseController):
         cleaned_file_name = re.sub(r'[^\w.-]', '', org_file_name.strip())
         return cleaned_file_name
 
-    def generate_unique_filename(self, org_file_name: str, project_id: str):
+    def generate_unique_filepath(self, org_file_name: str, project_id: str):
         random_key = self.generate_random_string()
         project_path = ProjectController().get_project_path(project_id=project_id)
         cleaned_file_name = self.clean_file_name(org_file_name)
@@ -35,6 +35,6 @@ class DataController(BaseController):
             project_path,
             random_key + "_" + cleaned_file_name
         )
-        return new_file_path
+        return new_file_path , random_key
 
        
